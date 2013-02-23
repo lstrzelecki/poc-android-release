@@ -75,7 +75,7 @@
                 <version>2.4</version>
                 <configuration>
                     <preparationGoals>android:manifest-update</preparationGoals>
-                    <arguments>-Prelease</arguments>
+                    <!--<arguments>-Prelease</arguments>-->
                 </configuration>
             </plugin>
 
