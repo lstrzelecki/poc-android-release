@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-        xmlns="http://maven.apache.org/POM/4.0.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
-        >
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.androidkickstarter.app</groupId>
     <artifactId>poc-android-release</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>apk</packaging>
     <name>Release</name>
 
     <scm>
         <connection>scm:git:git:@github.com:lstrzelecki/poc-android-release.git</connection>
         <url>scm:git:git:@github.com:lstrzelecki/poc-android-release.git</url>
-    </scm>
+      <tag>poc-android-release-0.0.1</tag>
+  </scm>
 
 
     <properties>
