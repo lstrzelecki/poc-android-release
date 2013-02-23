@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.androidkickstarter.app</groupId>
     <artifactId>poc-android-release</artifactId>
@@ -10,8 +11,8 @@
     <scm>
         <connection>scm:git:git:@github.com:lstrzelecki/poc-android-release.git</connection>
         <url>scm:git:git:@github.com:lstrzelecki/poc-android-release.git</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
 
     <properties>
@@ -19,7 +20,7 @@
 
         <!-- Plugins -->
         <android-maven-plugin.version>3.5.0</android-maven-plugin.version>
-        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.0.0</maven-compiler-plugin.version>
         <api.platform>16</api.platform>
 
         <!-- Dependencies -->
@@ -127,4 +128,7 @@
         </profile>
 
     </profiles>
+    <prerequisites>
+        <maven>3.0.4</maven>
+    </prerequisites>
 </project>
