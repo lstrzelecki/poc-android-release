@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.androidkickstarter.app</groupId>
     <artifactId>poc-android-release</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>apk</packaging>
     <name>Release</name>
 
     <scm>
         <connection>scm:git:git:@github.com:lstrzelecki/poc-android-release.git</connection>
         <url>scm:git:git:@github.com:lstrzelecki/poc-android-release.git</url>
-      <tag>poc-android-release-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
 
