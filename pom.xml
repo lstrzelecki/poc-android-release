@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.androidkickstarter.app</groupId>
     <artifactId>poc-android-release</artifactId>
@@ -47,6 +48,11 @@
                         <sdk>
                             <platform>${api.platform}</platform>
                         </sdk>
+                        <manifest>
+                            <versionName>${project.version}</versionName>
+                            <versionCodeAutoIncrement>false</versionCodeAutoIncrement>
+                            <versionCodeUpdateFromVersion>false</versionCodeUpdateFromVersion>
+                        </manifest>
                     </configuration>
                     <executions>
                         <execution>
@@ -54,13 +60,6 @@
                             <goals>
                                 <goal>manifest-update</goal>
                             </goals>
-                            <configuration>
-                                <manifest>
-                                    <versionName>${project.version}</versionName>
-                                    <versionCodeAutoIncrement>true</versionCodeAutoIncrement>
-                                    <versionCodeUpdateFromVersion>false</versionCodeUpdateFromVersion>
-                                </manifest>
-                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
@@ -71,19 +70,6 @@
             <plugin>
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                 <artifactId>android-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>update-manifest</id>
-                        <goals>
-                            <goal>manifest-update</goal>
-                        </goals>
-                        <configuration>
-                            <manifest>
-                                <versionCodeAutoIncrement>false</versionCodeAutoIncrement>
-                            </manifest>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
@@ -111,24 +97,16 @@
                     <plugin>
                         <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                         <artifactId>android-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>update-manifest</id>
-                                <goals>
-                                    <goal>manifest-update</goal>
-                                </goals>
-                                <configuration>
-                                    <manifest>
-                                        <versionCodeAutoIncrement>true</versionCodeAutoIncrement>
-                                    </manifest>
-                                </configuration>
-                            </execution>
-                        </executions>
+                        <configuration>
+                            <manifest>
+                                <!-- when release android:versionCode should be updated-->
+                                <versionCodeAutoIncrement>true</versionCodeAutoIncrement>
+                            </manifest>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
         </profile>
-
     </profiles>
     <prerequisites>
         <maven>3.0.4</maven>
