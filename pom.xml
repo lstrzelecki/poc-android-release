@@ -9,6 +9,7 @@
 
     <scm>
         <connection>scm:git:git:@github.com:lstrzelecki/poc-android-release.git</connection>
+        <developerConnection>scm:git:git:@github.com:lstrzelecki/poc-android-release.git</developerConnection>
         <url>scm:git:git:@github.com:lstrzelecki/poc-android-release.git</url>
         <tag>poc-android-release-0.0.6</tag>
     </scm>
@@ -18,8 +19,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Plugins -->
-        <android-maven-plugin.version>3.5.0</android-maven-plugin.version>
-        <maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
+        <android-maven-plugin.version>3.5.3</android-maven-plugin.version>
+        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <api.platform>16</api.platform>
 
         <!-- Dependencies -->
@@ -62,6 +63,14 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <version>1.8.1</version>
+                    <configuration>
+                        <includes>**/AndroidManifest.xml</includes>
+                        <message>update android manifest</message>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -71,11 +80,14 @@
                 <artifactId>android-maven-plugin</artifactId>
             </plugin>
             <plugin>
+                <artifactId>maven-scm-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <preparationGoals>android:manifest-update</preparationGoals>
-                    <!--<arguments>-Prelease</arguments>-->
+                    <preparationGoals>android:manifest-update scm:add scm:checkin</preparationGoals>
+                    <arguments>-Prelease</arguments>
                 </configuration>
             </plugin>
 
